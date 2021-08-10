@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <keep-alive exclude="Detail">
+      <!-- 旅游业跳转页面时会把前面的页面销毁，加上keep-alive让页面不用销毁再重新建立 -->
+      <router-view></router-view>
+    </keep-alive>
     <main-tab-bar></main-tab-bar>
   </div>
 </template>
@@ -14,9 +17,8 @@
       MainTabBar
     }
   }
-</script
-        MainTabBar>
+</script>
 
-<style>
+<style scoped>
   @import "assets/css/base.css";
 </style>
